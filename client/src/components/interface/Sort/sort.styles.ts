@@ -14,6 +14,7 @@ export const stls = {
         webkitAppearance: 'none',
         mozAppearance: 'none',
         textOverflow: '',
+        'appearance': 'none' as const,
         ":focus": {
             outline: 'none !important',
             boxShadow: 'none !important'

@@ -26,8 +26,8 @@ const Cars: FC = observer(() => {
   return (
     <>
       <h2 css={[font.TEXT1, fvrt.title]}>{counter(favoriteCarsStore.cars.length)}</h2>
-      {favoriteCarsStore.cars.map((car) => (
-        <div key={car.id} css={fvrt.car}>
+      {favoriteCarsStore.cars.map((car, i) => (
+        <div key={i} css={fvrt.car}>
 
           <img
             src={`http://localhost:4000${car.img_src}`}

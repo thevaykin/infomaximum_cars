@@ -19,7 +19,7 @@ const Cars: FC = observer(() => {
           <div key={car.id} css={carsList.car}>
 
             {
-              !car.availability && (
+              !car.availability ? (
                 <>
                   <img
                     src={`http://localhost:4000${car.img_src}`}
@@ -28,16 +28,12 @@ const Cars: FC = observer(() => {
                   />
                   <div css={[carsList.unavailable, font.TEXT3]}>Нет в наличии</div>
                 </>
-
-              )
-            }
-            {
-              car.availability && (
+              ) : (
                 <img
-              src={`http://localhost:4000${car.img_src}`}
-              alt={`${car.brand} ${car.model}`}
-              css={carsList.cars__cardImg}
-            />
+                  src={`http://localhost:4000${car.img_src}`}
+                  alt={`${car.brand} ${car.model}`}
+                  css={carsList.cars__cardImg}
+                />
               )
             }
 
@@ -63,17 +59,15 @@ const Cars: FC = observer(() => {
                 margin="20px 0 0 0"
                 availability={!car.availability}
               />
-
-              {car.availability && !checkIdsStore.id.includes(car.id) && (
-                <div
-                  css={carsList.like}
-                  onClick={() => { favoriteCarsStore.addCar(car) }}
-                >
-                  {Icons.dislike()}
-                </div>
-              )}
               {
-                car.availability && checkIdsStore.id.includes(car.id) && (
+                car.availability && !checkIdsStore.id.includes(car.id) ? (
+                  <div
+                    css={carsList.like}
+                    onClick={() => { favoriteCarsStore.addCar(car) }}
+                  >
+                    {Icons.dislike()}
+                  </div>
+                ) : (
                   <div
                     css={carsList.like}
                     onClick={() => { favoriteCarsStore.removeCars(car) }}

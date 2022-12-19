@@ -29,7 +29,6 @@ class carsListStore {
     removeCars(car: any) {
         this.cars = this.cars.filter((favoriteCar) => favoriteCar.id !== car.id)
         checkIdsStore.removeId(car.id);
-        // console.log(this.cars)
     }
 
 

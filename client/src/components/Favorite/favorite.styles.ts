@@ -36,9 +36,9 @@ export const fvrt = {
     desc: {
         margin: '0px 0 16px 0',
         maxHeight: '48px',
-        'white-space': 'wrap',
+        'white-space': 'wrap' as const,
         'overflow': 'hidden',
-        'text-overflow': 'ellipsis'
+        'text-overflow': 'ellipsis' as const
     },
 
     year: {

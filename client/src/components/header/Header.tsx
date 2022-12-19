@@ -19,7 +19,7 @@ const Header: FC = () => {
                     <Button
                         height={'36px'}
                         radius={'5px'}
-                        onClick={() => console.log('hi')}
+                        onClick={() => {}}
                         width={'135px'}
                         value={'Каталог'}
 

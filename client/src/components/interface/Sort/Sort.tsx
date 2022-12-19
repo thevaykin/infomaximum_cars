@@ -19,7 +19,7 @@ const Sort: FC<IOptions> = ({ options, value }: any) => {
         switch (select) {
             case "stocks": {
                 const carsListCopy = [...carsListStore.cars];
-                carsListCopy.sort((a, b) => Number(a.availability) - Number(b.availability));
+                carsListCopy.sort((a, b) => Number(b.availability) - Number(a.availability));
                 carsListStore.addCars(carsListCopy);
                 break;
             }

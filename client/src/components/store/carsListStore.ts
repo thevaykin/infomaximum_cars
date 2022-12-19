@@ -1,5 +1,5 @@
-import { makeAutoObservable, toJS } from "mobx";
-import carsService, { CarsListQuery } from "../../Api/fetchCars";
+import { makeAutoObservable } from "mobx";
+import carsService from "../../Api/fetchCars";
 
 interface ICars {
     id: number;
