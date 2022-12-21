@@ -20,7 +20,7 @@ const Button: FC<propsButton> = ({
   radius,
   width,
   value,
-  margin
+  margin,
 }) => {
   return (
     <button
@@ -32,7 +32,7 @@ const Button: FC<propsButton> = ({
         width,
         margin
       }}
-      css={btns}
+      css={!availability ? btns : btns[":disabled"]}
     >
       {children}
       {value}

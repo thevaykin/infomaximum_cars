@@ -19,8 +19,18 @@ export const btns = {
     },
 
     ":disabled": {
+        color: clrs.GRAY4,
         backgroundColor: clrs.GRAY2,
         cursor: 'not-allowed',
+        border: 'none',
+        fontFamily: 'Inter',
+        fontStyle: 'normal',
+        fontWeight: 500,
+        fontSize: '16px',
+        lineHeight: '18px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     ":active": {

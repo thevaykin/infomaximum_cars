@@ -91,5 +91,13 @@ export const carsList = {
         ':active': {
             fill: clrs.BLUE4,
         }
+    },
+
+    mutedLike: {
+        margin: '35px 0 0 25px',
+
+        ':hover': {
+            cursor: 'not-allowed',
+        },
     }
 };

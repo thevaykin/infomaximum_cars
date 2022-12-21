@@ -60,28 +60,27 @@ const Cars: FC = observer(() => {
                 availability={!car.availability}
               />
               {
-                car.availability && !checkIdsStore.id.includes(car.id) ? (
-                  <div
-                    css={carsList.like}
-                    onClick={() => { favoriteCarsStore.addCar(car) }}
-                  >
-                    {Icons.dislike()}
-                  </div>
-                ) : (
-                  <div
-                    css={carsList.like}
-                    onClick={() => { favoriteCarsStore.removeCars(car) }}
-                  >
-                    {Icons.like()}
-                  </div>
-                )
-              }
-              {
-                !car.availability && (
-                  <div css={carsList.like}>
-                    {Icons.mutedLike()}
-                  </div>
-                )
+                !car.availability ?
+                  (
+                    <div css={carsList.mutedLike}>
+                      {Icons.mutedLike()}
+                    </div>
+                  ) :
+                  car.availability && !checkIdsStore.id.includes(car.id) ? (
+                    <div
+                      css={carsList.like}
+                      onClick={() => { favoriteCarsStore.addCar(car) }}
+                    >
+                      {Icons.dislike()}
+                    </div>
+                  ) : (
+                    <div
+                      css={carsList.like}
+                      onClick={() => { favoriteCarsStore.removeCars(car) }}
+                    >
+                      {Icons.like()}
+                    </div>
+                  )
               }
             </div>
           </div>
